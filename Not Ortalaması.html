@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Not Ortalaması</title>
+</head>
+
+  <body>
+
+    <h1><ins>İstatistik</ins></h1>
+    Geçme Notu: <input id="gecme" type="text" maxlength="3" size="1">
+
+    <p><b>Vize</b></p>
+    <input id="vize" type="text" maxlength="3" size="4">
+
+    <p><b>Final</b></p>
+    <input id="final" type="text" maxlength="3" size="4">
+    <br>
+    <br>
+    <button type="button" onclick="myFunction()">Hesapla</button>
+    <p id="ort"></p>
+    <p id="sonuc"></p>
+
+    <script>
+      function myFunction() {
+        var message, x, y, z, a;
+        message = document.getElementById('sonuc').value;
+        x = document.getElementById('vize').value;
+        y = document.getElementById('final').value;
+        a = document.getElementById('gecme').value;
+        s = (x * 0.4) + (y * 0.6);
+
+        if (a == "") {
+          a = 60;
+        }
+
+        if (s < a) {
+          message = "KALDI!";
+        }
+
+        if (s >= a) {
+          message = "GEÇTİ!";
+        }
+
+        document.getElementById('ort').innerHTML = " Ortalama: "+ " " + s;
+        document.getElementById('sonuc').innerHTML = message;
+      }
+    </script>
+
+  </body>
+</html>
